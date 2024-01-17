@@ -1,0 +1,108 @@
+#musicPlayerWrapper {
+    display: none;
+    position: fixed;
+    right: -1px;
+    bottom: -1px;
+    height: 86px;
+    width: 95%;
+    border-radius: 85px 0px 0px 0px / 100px 10px 0px 12px;
+    background-color: #1e1e30;
+    z-index: 5000;
+    opacity: 0.8;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    box-shadow: 0 -10px 15px rgba(0, 0, 0, 0.34);
+}
+
+#musicPlayer {
+    position: relative;
+}
+
+#trackIcon {
+    height: 70px;
+    width: 70px;
+    border-radius: 4px;
+    position: relative;
+    top: 9px;
+    left: 60px;
+}
+
+#playTrack, #nextTrack, #prevTrack {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    margin: 10px;
+    opacity: 0.5;
+}
+
+#musicManager {
+    right: 6%;
+    top: 20px;
+}
+
+.playerElement {
+    position: absolute;
+    display: inline-block;
+}
+
+#trackInfoWrapper {
+    left: 144px;
+    top: 25px;
+}
+
+#progressBar {
+    top: 0px;
+    left: 150px;
+    height: 5px;
+    width: 85%;
+}
+
+#progressIndicator {
+    height: 5px;
+    background-color: #4EB8E0;
+}
+
+#trackTiming {
+    top: 4px;
+    right: 1%;
+    font-size: 15px;
+}
+
+#nextTrack, #prevTrack {
+    display: none;
+}
+
+@media (max-width: 760px) {
+    #musicPlayerWrapper {
+        left: 0px;
+        height: 60px;
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    #trackIcon {
+        left: 10px;
+        height: 45px;
+        width: 45px;
+        top: 10px;
+        left: 10px;
+    }
+
+    #progressBar {
+        left: 0px;
+        width: 100%;
+    }
+
+    #trackInfoWrapper {
+        display: none;
+    }
+
+    #musicManager {
+        right: 5px;
+        top: 5px;
+    }
+
+    #trackTiming {
+        display: none;
+    }
+}

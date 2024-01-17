@@ -1,0 +1,14 @@
+#videoWrapper {
+    display: none;
+    width: 100%;
+    position: fixed;
+    height: 300px;
+    z-index: 50000;
+    top: calc(50% - 160px);
+}
+
+#videoPlayer {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}

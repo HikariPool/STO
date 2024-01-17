@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Workspace</title>
+    <meta th:replace="fragments/master :: masterHead"/>
+    <link rel="stylesheet" th:href="@{/style/page_style/workspace_page.css}">
+</head>
+<body ontouchstart="">
+<div th:replace="fragments/header :: header"></div>
+<div th:replace="fragments/master :: liquids"></div>
+<iframe class="workspace" id="workspace" src="/frame/session_frame"></iframe>
+<div id="videoWrapper">
+    <video controls id="videoPlayer"></video>
+</div>
+<div th:replace="fragments/music_player :: music_player_contaner"></div>
+<div th:replace="fragments/workspace_scripts :: scripts"></div>
+</body>
+</html>

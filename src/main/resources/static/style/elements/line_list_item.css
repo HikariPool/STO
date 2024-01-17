@@ -1,0 +1,48 @@
+
+.lineListItem {
+    z-index: 5000;
+    position: relative;
+    display: inline-block;
+    height: 80px;
+    width: 95%;
+    margin: 2px 2px;
+    background-color: #262636;
+    border-radius: 20px;
+    opacity: 0.8;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    overflow: hidden;
+}
+
+.lineListItem:active {
+    background-color: #4EB8E0;
+}
+
+.lineListItemImage {
+    position: absolute;
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    top: 5px;
+    left: 10px;
+    border-radius: 10px;
+}
+
+.lineListItemTitle {
+    position: absolute;
+    display: -webkit-box;
+    text-align: start;
+    font-size: 18px;
+    top: 6px;
+    left: 85px;
+    height: 45px;
+    width: 65%;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.linListItemEdit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
