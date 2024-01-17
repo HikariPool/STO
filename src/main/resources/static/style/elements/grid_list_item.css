@@ -5,8 +5,8 @@
     height: 190px;
     width: 150px;
     margin: 5px 2px;
-    background-color: #262636;
-    border-radius: 20px;
+    background-color: #000000;
+    border-radius: 10px;
     opacity: 0.8;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);

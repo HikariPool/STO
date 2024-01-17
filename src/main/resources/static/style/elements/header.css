@@ -11,7 +11,7 @@
     opacity: 0.8;
     backdrop-filter: blur(5px);
     box-shadow: 0 15px 15px rgba(0, 0, 0, 0.34);
-    background-color: #1e1e30;
+    background-color: #000000;
 }
 
 #userIcon {

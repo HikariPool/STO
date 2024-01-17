@@ -6,7 +6,10 @@
     top: 50%;
     transform: translate(-50%, -60%);
     padding-bottom: 5px;
-    background-color: #555588;
+    background-color: #000000;
+    backdrop-filter: blur(5px);
+    opacity: 0.9;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.34);
     border-radius: 10px;
     z-index: 1000;
 }

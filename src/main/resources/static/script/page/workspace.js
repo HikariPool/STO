@@ -6,14 +6,6 @@ window.addEventListener('onbeforeunload ', () => {
     audio.pause();
 });
 
-
-function clearIntervals() {
-    var interval_id = window.setInterval("", Number.MAX_VALUE); // Get a reference to the last
-    // interval +1
-    for (var i = 1; i < interval_id; i++)
-        window.clearInterval(i);
-}
-
 function logout() {
     $.ajax({
         url: '/auth/logout',
