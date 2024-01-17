@@ -5,16 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.flat</groupId>
-    <artifactId>flat-assesment</artifactId>
+    <artifactId>flat_assessment</artifactId>
     <version>2.0</version>
     <packaging>jar</packaging>
-    <name>flat-assesment</name>
+    <name>flat_assessment</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
         <spring.version>2.2.2.RELEASE</spring.version>
         <junit.version>4.11</junit.version>
         <mockito.version>1.9.5</mockito.version>
