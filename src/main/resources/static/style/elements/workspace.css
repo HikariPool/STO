@@ -11,6 +11,11 @@
     visibility: hidden;
 }
 
+.backgroundWallpaper {
+    width: 100%;
+    height: 100%;
+}
+
 @media (max-width: 760px) {
     .workspace {
         width: 100%;
