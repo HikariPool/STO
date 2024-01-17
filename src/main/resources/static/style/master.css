@@ -1,14 +1,12 @@
 @import "font.css";
 @import "ui_element/button.css";
 @import "ui_element/input.css";
-@import "elements/liquid.css";
 
 
 body {
     position: fixed;
     height: 100%;
     width: 100%;
-    background-color: #171727;
     overflow: hidden hidden;
     font-family: Roboto, serif;
     font-weight: bold;
