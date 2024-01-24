@@ -22,6 +22,9 @@ public class User implements UserDetails {
     private String email;
     @Column(nullable = false, length = 60)
     private String password;
+    @Column
+    private String role;
+
 
     @JsonIgnore
     @ManyToMany
