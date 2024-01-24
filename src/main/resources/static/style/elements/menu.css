@@ -8,10 +8,10 @@
     top: 55px;
     height: 30px;
     width: 130px;
-    border-radius: 10px;
-    background: #1e1e30;
+    border-radius: 5px;
+    background: #020304;
 }
 
 .menuItem:active {
-    background: #4EB8E0;
+    background: #21262d;
 }
