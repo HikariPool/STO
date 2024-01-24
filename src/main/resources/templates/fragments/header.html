@@ -6,8 +6,12 @@
     </a>
     <div th:replace="icons/userIcon :: user_icon"></div>
     <div id="menu">
-        <div th:replace="icons/logoutIcon :: logout_icon"></div>
+        <div class="menuItem" id="chatsItem">
+            <div th:replace="icons/chatIcon :: chat_icon"></div>
+            <h4>Чаты</h4>
+        </div>
         <div class="menuItem" id="logOutItem">
+            <div th:replace="icons/logoutIcon :: logout_icon"></div>
             <h4>Выйти</h4>
         </div>
     </div>
