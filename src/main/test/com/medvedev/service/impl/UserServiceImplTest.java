@@ -1,8 +1,8 @@
-package com.flat.service.impl;
+package com.sto.service.impl;
 
-import com.flat.model.entity.business.User;
-import com.flat.repository.UserRepo;
-import com.flat.service.UserService;
+import com.sto.model.entity.business.User;
+import com.sto.repository.UserRepo;
+import com.sto.service.UserService;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

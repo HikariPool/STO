@@ -3,11 +3,11 @@ version: "1"
 services:
   java:
     build: .
-    image: flat_assessment
-    container_name: flat_assessment
+    image: STO
+    container_name: STO
     environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/flat_assessment
-      - SPRING_DATASOURCE_USERNAME=flat_assessment
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/STO
+      - SPRING_DATASOURCE_USERNAME=STO
       - SPRING_DATASOURCE_PASSWORD=1234
       - SPRING_JPA_HIBERNATE_DDL_AUTO=update
     ports:
@@ -15,21 +15,21 @@ services:
     depends_on:
       - postgres
     volumes:
-      - flat_assessment_data:/java/upload
+      - STO_data:/java/upload
 
   postgres:
     image: postgres
     restart: always
     container_name: postgres
     environment:
-      POSTGRES_USER: flat_assessment
+      POSTGRES_USER: STO
       POSTGRES_PASSWORD: 1234
-      POSTGRES_DB: flat_assessment
+      POSTGRES_DB: STO
     ports:
       - 5432:5432
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
 volumes:
-  flat_assessment_data: null
+  STO_data: null
   postgres_data: null
