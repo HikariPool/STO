@@ -18,8 +18,4 @@ public class Message {
     @CreatedBy
     @ManyToOne(cascade = CascadeType.ALL)
     private User createdBy;
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "session_id")
-    private Session session;
-
 }

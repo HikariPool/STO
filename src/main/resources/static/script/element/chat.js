@@ -13,26 +13,26 @@ chatLayout.style = 'display: block';
 
 
 messageButton.addEventListener('click', () => {
-//    $.ajax({
-//        url: '/chat/create?session_id=' + workspaceHead.getAttribute('session_id'),
-//        type: 'POST',
-//        data: {
-//            text: messageField.value
-//        },
-//        success: () => {
-//            messageField.value = '';
-//            reloadChat();
-//        }
-//    });
+    $.ajax({
+        url: '/chat/send',
+        type: 'POST',
+        data: {
+            text: messageField.value
+        },
+        success: () => {
+            messageField.value = '';
+            reloadChat();
+        }
+    });
 });
 
 
 function reloadChat() {
-//    $.ajax({
-//        url: '/chat/get?session_id=' + workspaceHead.getAttribute('session_id'),
-//        type: 'GET',
-//        success: (data) => showMessages(data)
-//    });
+    $.ajax({
+        url: '/chat/client',
+        type: 'GET',
+        success: (data) => showMessages(data)
+    });
 }
 
 function showMessages(messages) {

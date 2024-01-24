@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface ChatRepo extends JpaRepository<Message, Long> {
 
-    @Query(nativeQuery = true, value = "SELECT * FROM MESSAGES WHERE SESSION_ID = ?")
-    List<Message> findBySessionId(Long sessionId);
+    @Query(nativeQuery = true, value = "SELECT * FROM MESSAGES WHERE CREATED_BY_ID = ?")
+    List<Message> findByClientId(Long clientId);
 }

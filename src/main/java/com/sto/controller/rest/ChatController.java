@@ -1,9 +1,11 @@
 package com.sto.controller.rest;
 
 import com.sto.model.entity.business.Message;
+import com.sto.model.entity.business.User;
 import com.sto.repository.ChatRepo;
 import com.sto.repository.SessionRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,14 +20,19 @@ public class ChatController {
 
 
     @GetMapping("/get")
-    public List<Message> get(@RequestParam("session_id") Long sessionId) {
-        return chatRepo.findBySessionId(sessionId);
+    public List<Message> get(@RequestParam("client_id") Long clientId) {
+        return chatRepo.findByClientId(clientId);
     }
 
-    @PostMapping("/create")
-    public void create(@RequestParam("session_id") Long sessionId, Message message) {
-        message.setSession(sessionRepo.findById(sessionId).get());
+    @GetMapping("/client")
+    public List<Message> get() {
+        User currentUser = (User) SecurityContextHolder.getContext()
+                .getAuthentication().getPrincipal();
+        return chatRepo.findByClientId(currentUser.getId());
+    }
 
+    @PostMapping("/send")
+    public void send(Message message) {
         chatRepo.saveAndFlush(message);
     }
 }
