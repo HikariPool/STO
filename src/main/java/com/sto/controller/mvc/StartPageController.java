@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/store")
 public class StartPageController {
     @GetMapping("/page")
-    public String getWorkspacePage() {
+    public String getStartPage() {
         return "start_page";
     }
 }
