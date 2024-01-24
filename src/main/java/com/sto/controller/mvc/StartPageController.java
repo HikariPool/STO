@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/workspace")
-public class WorkspaceController {
+@RequestMapping("/store")
+public class StartPageController {
     @GetMapping("/page")
     public String getWorkspacePage() {
-        return "workspace";
+        return "start_page";
     }
 }

@@ -21,7 +21,7 @@ function sendData() {
             username: usernameField.val(),
             password: passwordField.val()
         },
-        success: () => window.location.replace("/workspace/page"),
+        success: () => window.location.replace("/store/page"),
         error: xhr => showError(JSON.parse(xhr.responseText).message)
     });
 }
