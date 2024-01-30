@@ -6,13 +6,7 @@
     <script th:src="@{/script/jquery/JQuery.js}"></script>
 </head>
 <body>
-<div id="chat">
-    <div id="messageContainer"></div>
-    <input id="messageField" placeholder="Сообщение" type="text">
-    <button id="messageButton">Отправить</button>
-    </input>
-</div>
-<div th:replace="fragments/popups :: create_popup"></div>
+<div id="listItemContainer"></div>
 </body>
-<div th:replace="frames/frag/car_service_frame_fragments :: scripts"></div>
+<div th:replace="frames/frag/admin_chats.html :: scripts"></div>
 </html>

@@ -6,4 +6,6 @@ public interface UserService {
     boolean existsWith(String username, String password);
 
     void create(User user);
+
+    User getAdmin();
 }

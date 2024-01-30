@@ -1,6 +1,6 @@
 package com.sto.service.impl;
 
-import com.sto.model.dto.SessionDTO;
+import com.sto.model.dto.SessionDto;
 import com.sto.model.entity.business.Session;
 import com.sto.model.entity.business.User;
 import com.sto.model.entity.util.DtoConverter;
@@ -77,8 +77,8 @@ public class SessionServiceImpl implements SessionService {
     }
 
     @Override
-    public List<SessionDTO> getByUser(User user) {
-        return DtoConverter.convert(sessionRepo.getByUser(user.getId()), SessionDTO.class);
+    public List<SessionDto> getByUser(User user) {
+        return DtoConverter.convert(sessionRepo.getByUser(user.getId()), SessionDto.class);
     }
 
     @Override

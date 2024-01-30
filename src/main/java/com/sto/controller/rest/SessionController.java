@@ -1,6 +1,6 @@
 package com.sto.controller.rest;
 
-import com.sto.model.dto.SessionDTO;
+import com.sto.model.dto.SessionDto;
 import com.sto.model.entity.business.User;
 import com.sto.service.SessionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,25 +20,25 @@ public class SessionController {
 
 
     @PostMapping("/create")
-    public void create(@RequestParam(value = "img", required = false) MultipartFile image, SessionDTO sessionDTO) {
+    public void create(@RequestParam(value = "img", required = false) MultipartFile image, SessionDto sessionDTO) {
         String title = sessionDTO.getTitle();
         if (title != null && !title.isEmpty()) {
-            sessionService.create(SessionDTO.convertToEntity(sessionDTO), image);
+            sessionService.create(SessionDto.convertToEntity(sessionDTO), image);
             return;
         }
         throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Title is empty!");
     }
 
     @GetMapping("/all")
-    public List<SessionDTO> getAll() {
+    public List<SessionDto> getAll() {
         User currentUser = (User) SecurityContextHolder.getContext()
                 .getAuthentication().getPrincipal();
         return sessionService.getByUser(currentUser);
     }
 
     @GetMapping("/get")
-    public SessionDTO getSessionBy(@RequestParam("session_id") Long sessionId) {
-        return SessionDTO.convertToDto(sessionService.getBy(sessionId));
+    public SessionDto getSessionBy(@RequestParam("session_id") Long sessionId) {
+        return SessionDto.convertToDto(sessionService.getBy(sessionId));
     }
 
     @PostMapping("/people")

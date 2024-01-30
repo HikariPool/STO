@@ -1,6 +1,6 @@
 package com.sto.service;
 
-import com.sto.model.dto.SessionDTO;
+import com.sto.model.dto.SessionDto;
 import com.sto.model.entity.business.Session;
 import com.sto.model.entity.business.User;
 import org.springframework.web.multipart.MultipartFile;
@@ -12,7 +12,7 @@ public interface SessionService {
 
     void create(Session session, MultipartFile image);
 
-    List<SessionDTO> getByUser(User user);
+    List<SessionDto> getByUser(User user);
 
     Session getBy(Long sessionId);
 

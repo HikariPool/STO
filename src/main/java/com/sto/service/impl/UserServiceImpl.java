@@ -1,5 +1,6 @@
 package com.sto.service.impl;
 
+import com.sto.data.constants.Constants;
 import com.sto.model.entity.business.User;
 import com.sto.repository.UserRepo;
 import com.sto.service.UserService;
@@ -41,5 +42,10 @@ public class UserServiceImpl implements UserDetailsService, UserService {
         String encodedPassword = encoder.encode(user.getPassword());
         user.setPassword(encodedPassword);
         userRepo.save(user);
+    }
+
+    @Override
+    public User getAdmin() {
+        return userRepo.findByRole(Constants.ADMIN);
     }
 }
