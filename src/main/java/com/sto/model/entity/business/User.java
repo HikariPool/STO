@@ -1,6 +1,5 @@
 package com.sto.model.entity.business;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,7 +9,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -32,16 +30,6 @@ public class User implements UserDetails {
     private String role;
 
 
-    @JsonIgnore
-    @ManyToMany
-    @JoinTable(
-            name = "participants",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "session_id"))
-    private List<Session> sessions;
-
-
-    //// TODO: 7/23/2020 implement all methods
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return null;
