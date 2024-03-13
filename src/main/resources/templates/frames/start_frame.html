@@ -7,18 +7,19 @@
 </head>
 <body>
 <div id="listItemContainer">
-    <a class="gridListItem parentElement" href="/frame/buy_gears_frame.html" id="buyGears">
+    <div class="gridListItem parentElement" id="buyGears">
         <img class="gridListItemImage" th:src="@{/icon/gears.webp}">
         <h3 class="gridListItemTitle">Купить запчасти</h3>
-    </a>
-    <a class="gridListItem parentElement" href="/frame/car_service_frame.html" id="service">
+    </div>
+    <div class="gridListItem parentElement" id="service">
         <img class="gridListItemImage" th:src="@{/icon/service.webp}">
         <h3 class="gridListItemTitle">Ремонт</h3>
-    </a>
-    <a class="gridListItem parentElement" href="/frame/inventory_frame.html" id="inventory">
+    </div>
+    <div class="gridListItem parentElement" id="inventory">
         <img class="gridListItemImage" th:src="@{/icon/inventory.webp}">
         <h3 class="gridListItemTitle">Склад</h3>
-    </a>
+    </div>
 </div>
+<script th:src="@{/script/frame/start_frame.js}" type="text/javascript"></script>
 </body>
 </html>

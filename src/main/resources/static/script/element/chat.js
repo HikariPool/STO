@@ -14,7 +14,7 @@ chatLayout.style = 'display: block';
 
 messageButton.addEventListener('click', () => {
     $.ajax({
-        url: '/chat/send',
+        url: '/chat/send/' + getParam('chat_id'),
         type: 'POST',
         data: {
             text: messageField.value
@@ -28,11 +28,11 @@ messageButton.addEventListener('click', () => {
 
 
 function reloadChat() {
-    $.ajax({
-        url: '/chat/client',
+     $.ajax({
+        url: '/chat/get/' + getParam('chat_id'),
         type: 'GET',
-        success: (data) => showMessages(data)
-    });
+        success: (data) => showMessages(data.messages)
+        });
 }
 
 function showMessages(messages) {
@@ -54,4 +54,10 @@ function showMessages(messages) {
         div.append(title, text);
         messageContainer.append(div);
     }
+}
+
+function getParam(title) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    return urlParams.get(title);
 }
