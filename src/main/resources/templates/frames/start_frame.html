@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" th:href="@{/style/frame/start_frame.css}"/>
@@ -7,15 +7,15 @@
 </head>
 <body>
 <div id="listItemContainer">
-    <div class="gridListItem parentElement" id="buyGears">
+    <div class="gridListItem parentElement" id="buyGears" th:unless="${visibility}">
         <img class="gridListItemImage" th:src="@{/icon/gears.webp}">
         <h3 class="gridListItemTitle">Купить запчасти</h3>
     </div>
-    <div class="gridListItem parentElement" id="service">
+    <div class="gridListItem parentElement" id="service" th:unless="${visibility}">
         <img class="gridListItemImage" th:src="@{/icon/service.webp}">
         <h3 class="gridListItemTitle">Ремонт</h3>
     </div>
-    <div class="gridListItem parentElement" id="inventory">
+    <div class="gridListItem parentElement" id="inventory" th:if="${visibility}">
         <img class="gridListItemImage" th:src="@{/icon/inventory.webp}">
         <h3 class="gridListItemTitle">Склад</h3>
     </div>
