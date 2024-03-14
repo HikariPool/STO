@@ -27,4 +27,10 @@ public class FileServiceImpl implements FileService {
 
         return fileTitle;
     }
+
+    @Override
+    public String getMemType(String fileTitle) {
+        return fileTitle.substring(fileTitle.lastIndexOf("."));
+    }
+
 }
