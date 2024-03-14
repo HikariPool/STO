@@ -1,0 +1,14 @@
+.equipment{
+    background-color: #000000;
+    border-radius: 5px;
+    opacity: 0.8;
+    backdrop-filter: blur(5px);
+}
+.equipmentImg{
+    height: 200px;
+    weight: 200px;
+}
+
+td{
+    color: #aaaea8;
+}

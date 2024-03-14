@@ -9,7 +9,7 @@
 <div class="infoField" id="infoField">Select item to remove. Click here to cancel</div>
 
 <div class="workspaceHead" id="workspaceHead">
-    <h1 id="title"></h1>
+    <h1 id="title">Склад</h1>
     <button id="addButton">
         <svg height="15pt" style="enable-background:new 0 0 409.6 409.6;" version="1.1" viewBox="0 0 409.6 409.6"
              width="15pt" x="0px"
@@ -27,7 +27,32 @@
     </svg>
     <div th:replace="fragments/header :: editMenuContent"></div>
 </div>
-<div id="listItemContainer"></div>
-<div th:replace="fragments/popups :: create_popup"></div>
+<div id="listItemContainer">
+
+    <div class="equipment">
+        <img class="equipmentImg" src="https://assets.blackxperience.com/content/blackauto/autotips/abs-2-wide.jpg"/>
+        <table>
+            <tbody>
+            <tr>
+                <td>Номер детали</td>
+                <td> :</td>
+                <td>123234234</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--    <div class="equipment">-->
+    <!--        <img class="eqipParam" src="https://avatars.mds.yandex.net/i?id=a47b909683b0c12ab934fb805e9a3afed65ae058-10471668-images-thumbs&n=13"/>-->
+    <!--        <div>-->
+    <!--            <h4 class="eqipParam">Номер детали</h4>-->
+    <!--            <div class="eqipParam">1234124</div>-->
+    <!--        </div>-->
+    <!--        <div><h4 class="eqipParam">Стелаж</h4></div>-->
+    <!--        <div><h4 class="eqipParam">Полка</h4></div>-->
+    <!--        <div><h4 class="eqipParam">Общее кол-во</h4></div>-->
+    <!--        <div><h4 class="eqipParam">Кол-во забронированных</h4></div>-->
+    <!--    </div>-->
+</div>
+<script th:src="@{/script/frame/inventory.js}" type="text/javascript"></script>
 </body>
 </html>
