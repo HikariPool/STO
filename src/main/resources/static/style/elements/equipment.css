@@ -9,6 +9,16 @@
     weight: 200px;
 }
 
-td{
+td,th{
     color: #aaaea8;
+}
+
+.inputParamDisabled{
+    pointer-events:none;
+    background-color: #020304;
+}
+
+.paramAddButton{
+    width: 35px;
+    background-color: #84b58f;
 }
