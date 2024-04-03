@@ -31,7 +31,7 @@ public class InventoryServiceImpl {
 
         String imageFileTitle = sparePartsDto.getImageName();
         byte[] img = sparePartsDto.getImg();
-        if (img != null) {
+        if (img != null && img.length != 0) {
             imageFileTitle = fileService.write(img,
                     fileService.getMemType(imageFileTitle));
         }

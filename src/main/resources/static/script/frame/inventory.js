@@ -8,6 +8,33 @@ const reader = new FileReader();
 
 loadTemplates()
 
+reloadList()
+
+function showItems(items){
+    inventoryItem = createElementFromTemplate(inventoryItemTemplate)
+    tbody = inventoryItem.getElementsByTagName('tbody')[0]
+
+     for(var i = 0; i < items.length; i++){
+         item = items[i]
+         for(key of Object.keys(item.params)){
+             paramTemplate = createElementFromTemplate(paramItem)
+             paramTemplate.querySelectorAll('[name="name"]').value = key
+             paramTemplate.querySelectorAll('[name="value"]').value = item[key].value
+
+             tbody.append(paramTemplate)
+         }
+     }
+     listItemContainer.append(inventoryItem)
+}
+
+function reloadList(){
+        $.ajax({
+                url: '/inventory/all',
+                type: 'GET',
+                success: (data) => showItems(data)
+            });
+}
+
 addButton.addEventListener('click', () => {
       inventoryItem = createElementFromTemplate(inventoryItemTemplate)
       tbody = inventoryItem.getElementsByTagName('tbody')[0]

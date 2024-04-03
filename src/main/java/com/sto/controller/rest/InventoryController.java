@@ -2,6 +2,7 @@ package com.sto.controller.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sto.model.dto.SparePartsDto;
+import com.sto.model.entity.business.SpareParts;
 import com.sto.model.entity.util.DtoConverter;
 import com.sto.service.impl.InventoryServiceImpl;
 import lombok.SneakyThrows;
@@ -20,14 +21,12 @@ public class InventoryController {
 
     @GetMapping("/all")
     public List<SparePartsDto> getAll() {
-        return DtoConverter.convert(inventoryService.getAll(), SparePartsDto.class);
+        return DtoConverter.convert(inventoryService.getAll(), a -> SparePartsDto.convertToDto((SpareParts) a));
     }
 
     @SneakyThrows
     @PostMapping("/create")
     public void create(@RequestBody String json) {
-//        sparePartsDto.setImg();
-
         inventoryService.create(objectMapper.readValue(json, SparePartsDto.class));
     }
 }
