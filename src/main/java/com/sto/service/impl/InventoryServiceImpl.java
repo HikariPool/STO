@@ -27,17 +27,17 @@ public class InventoryServiceImpl {
     @SneakyThrows
     @Transactional
     public void create(SparePartsDto sparePartsDto) {
-//        SpareParts spareParts = SparePartsDto.convertToEntity(sparePartsDto);
-//
-//        String imageFileTitle = null;
-//        MultipartFile img = sparePartsDto.getImg();
-//        if (img != null) {
-//            imageFileTitle = fileService.write(img.getBytes(),
-//                    fileService.getMemType(img.getOriginalFilename()));
-//        }
-//        spareParts.setImagePath(imageFileTitle);
-//
-//        sparePartsRepo.saveAndFlush(spareParts);
+        SpareParts spareParts = SparePartsDto.convertToEntity(sparePartsDto);
+
+        String imageFileTitle = sparePartsDto.getImageName();
+        byte[] img = sparePartsDto.getImg();
+        if (img != null) {
+            imageFileTitle = fileService.write(img,
+                    fileService.getMemType(imageFileTitle));
+        }
+        spareParts.setImagePath(imageFileTitle);
+
+        sparePartsRepo.saveAndFlush(spareParts);
     }
 
 }

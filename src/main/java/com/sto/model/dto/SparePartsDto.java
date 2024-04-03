@@ -20,6 +20,7 @@ public class SparePartsDto {
 
     private Long id;
     private String imagePath;
+    private String imageName;
     private byte[] img;
     private Map<String, String> params = new HashMap<>();
 
