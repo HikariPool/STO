@@ -8,7 +8,6 @@ import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -28,17 +27,17 @@ public class InventoryServiceImpl {
     @SneakyThrows
     @Transactional
     public void create(SparePartsDto sparePartsDto) {
-        SpareParts spareParts = SparePartsDto.convertToEntity(sparePartsDto);
-
-        String imageFileTitle = null;
-        MultipartFile img = sparePartsDto.getImg();
-        if (img != null) {
-            imageFileTitle = fileService.write(img.getBytes(),
-                    fileService.getMemType(img.getOriginalFilename()));
-        }
-        spareParts.setImagePath(imageFileTitle);
-
-        sparePartsRepo.saveAndFlush(spareParts);
+//        SpareParts spareParts = SparePartsDto.convertToEntity(sparePartsDto);
+//
+//        String imageFileTitle = null;
+//        MultipartFile img = sparePartsDto.getImg();
+//        if (img != null) {
+//            imageFileTitle = fileService.write(img.getBytes(),
+//                    fileService.getMemType(img.getOriginalFilename()));
+//        }
+//        spareParts.setImagePath(imageFileTitle);
+//
+//        sparePartsRepo.saveAndFlush(spareParts);
     }
 
 }
