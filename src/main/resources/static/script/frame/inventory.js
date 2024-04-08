@@ -16,7 +16,9 @@ function showItems(items){
          tbody = inventoryItem.getElementsByTagName('tbody')[0]
 
          item = items[i]
-         inventoryItem.getElementsByTagName('img')[0].src = item.imagePath
+         if(item.imagePath != '/upload/' && item.imagePath != null && item.imagePath != undefined){
+            inventoryItem.getElementsByTagName('img')[0].src = item.imagePath
+         }
 
          for(key of Object.keys(item.params)){
              paramTemplate = createElementFromTemplate(paramItem)

@@ -18,7 +18,7 @@ public class SpareParts {
 
     @PostLoad
     private void postLoad() {
-        this.imagePath = Constants.UPLOAD_URL + imagePath;
+        this.imagePath = imagePath != null ? Constants.UPLOAD_URL + imagePath : null;
     }
 
     @PrePersist
