@@ -1,2 +1,3 @@
-https://mail.yandex.ru/?dpda=yes&uid=702582897#setup/client
-enable Портальный пароль
+Setup
+1) enable 'Портальный пароль' (https://mail.yandex.ru/?dpda=yes&uid=702582897#setup/client)
+2) set up email and password in mail.properties
