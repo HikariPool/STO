@@ -7,4 +7,5 @@ public class Constants {
     public static String ADMIN = "admin";
 
     public static String ADMIN_CONFIG_PATH = "";
+    public static String CHECK_ORDER_LINK = "/frame/inventory_frame.html?id=";
 }

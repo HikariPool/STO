@@ -48,7 +48,7 @@ function openBuyForm(item){
           $.ajax({
                   url: '/order/create',
                   type: 'POST',
-                  data: JSON.stringify(order),
+                  data: order,
                   success: (data) => {
                       window.location.href = '/frame/success.html';
                   }

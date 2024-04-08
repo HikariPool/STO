@@ -24,6 +24,11 @@ public class InventoryController {
         return DtoConverter.convert(inventoryService.getAll(), a -> SparePartsDto.convertToDto((SpareParts) a));
     }
 
+    @GetMapping("/get")
+    public List<SparePartsDto> find(@RequestParam("id") Long id) {
+        return List.of(inventoryService.findById(id));
+    }
+
     @SneakyThrows
     @PostMapping("/create")
     public void create(@RequestBody String json) {

@@ -50,12 +50,25 @@ function enable(inventoryItem, doEnable){
 
 function reloadList(){
         listItemContainer.innerHTML = ''
-
-        $.ajax({
+        requestParam = get('id')
+        if(requestParam != null && requestParam != undefined){
+            $.ajax({
+                url: '/inventory/get?id=' + requestParam,
+                type: 'GET',
+                success: (data) => showItems(data)
+            });
+        }else{
+            $.ajax({
                 url: '/inventory/all',
                 type: 'GET',
                 success: (data) => showItems(data)
             });
+        }
+}
+
+function get(name){
+   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+      return decodeURIComponent(name[1]);
 }
 
 addButton.addEventListener('click', () => {

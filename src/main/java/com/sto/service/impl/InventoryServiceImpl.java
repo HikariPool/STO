@@ -40,4 +40,7 @@ public class InventoryServiceImpl {
         sparePartsRepo.saveAndFlush(spareParts);
     }
 
+    public SparePartsDto findById(Long id) {
+        return SparePartsDto.convertToDto(sparePartsRepo.findById(id).get());
+    }
 }
