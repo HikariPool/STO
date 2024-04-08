@@ -1,0 +1,19 @@
+.successIcon{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%, -60%);
+}
+
+h3{
+    color: #4caf50;
+    position: absolute;
+    top: 50%;
+    font-family: Roboto;
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../fonts/Roboto-Bold.ttf);
+}
