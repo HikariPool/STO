@@ -11,23 +11,44 @@ loadTemplates()
 reloadList()
 
 function showItems(items){
-    inventoryItem = createElementFromTemplate(inventoryItemTemplate)
-    tbody = inventoryItem.getElementsByTagName('tbody')[0]
-
      for(var i = 0; i < items.length; i++){
+         inventoryItem = createElementFromTemplate(inventoryItemTemplate)
+         tbody = inventoryItem.getElementsByTagName('tbody')[0]
+
          item = items[i]
+         inventoryItem.getElementsByTagName('img')[0].src = item.imagePath
+
          for(key of Object.keys(item.params)){
              paramTemplate = createElementFromTemplate(paramItem)
-             paramTemplate.querySelectorAll('[name="name"]').value = key
-             paramTemplate.querySelectorAll('[name="value"]').value = item[key].value
+             paramTemplate.querySelectorAll('[name="name"]')[0].value = key
+             paramTemplate.querySelectorAll('[name="value"]')[0].value = item[key]
 
              tbody.append(paramTemplate)
          }
+
+         enable(inventoryItem, false)
+
+         listItemContainer.append(inventoryItem)
      }
-     listItemContainer.append(inventoryItem)
+}
+
+function enable(inventoryItem, doEnable){
+    if(doEnable){
+        for(input of inventoryItem.getElementsByTagName('input'))
+            input.removeAttribute('disabled')
+        for( button of inventoryItem.getElementsByTagName('button'))
+            button.removeAttribute('hidden')
+    }else{
+        for(input of inventoryItem.getElementsByTagName('input'))
+            input.setAttribute('disabled','')
+        for( button of inventoryItem.getElementsByTagName('button'))
+            button.setAttribute('hidden', '')
+    }
 }
 
 function reloadList(){
+        listItemContainer.innerHTML = ''
+
         $.ajax({
                 url: '/inventory/all',
                 type: 'GET',
@@ -78,9 +99,7 @@ function send(dto){
             contentType: false,
             processData: false,
             data: JSON.stringify(Object.fromEntries(dto)),
-            success: (data) => {
-
-            }
+            success: (data) => reloadList()
         });
 }
 
